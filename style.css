@@ -14,9 +14,7 @@ html, body {
   right: 0;
   bottom: 0;
   left: 0;
-  z-index: 20;
-  clip: rect(auto, auto, auto, auto);
-  pointer-events: none; }
+  clip: rect(auto, auto, auto, auto); }
 
 .nav {
   position: fixed;
@@ -32,8 +30,7 @@ html, body {
     display: flex;
     pointer-events: all;
     justify-content: space-around;
-    align-items: baseline;
-    transform: perspective(0); }
+    align-items: baseline; }
     .nav .nav-ul h1 {
       display: inline-block;
       padding: 0;
@@ -61,11 +58,14 @@ p {
 
 .hamburger {
   display: none;
-  pointer-events: all;
-  transform: perspective(0); }
+  pointer-events: all; }
   .hamburger:hover {
     cursor: pointer; }
 
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  .nav-clip {
+    clip: auto;
+    -webkit-mask-image: -webkit-linear-gradient(top, #ffffff 0%, #ffffff 100%); } }
 @media only screen and (max-width: 650px) {
   .nav .hamburger {
     display: block;
